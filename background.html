@@ -1,0 +1,26 @@
+<script type="text/javascript">
+function refreshIconAndContextMenu(tab)
+{
+	if(!tab) {
+	  	return;
+	}
+	
+	if (tab.url.indexOf('facebook') > -1) {
+		chrome.pageAction.setIcon({tabId: tab.id, path: "icon.png"});
+		chrome.pageAction.show(tab.id);
+	}
+}
+
+chrome.windows.getAll({populate: true}, function(windows) {
+	for (var i = 0; i < windows.length; i++)
+		for (var j = 0; j < windows[i].tabs.length; j++)
+			refreshIconAndContextMenu(windows[i].tabs[j]);
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+	chrome.tabs.sendRequest(tabId, {reqtype: "clickhide-deactivate"})
+	if(changeInfo.status == "loading")
+		refreshIconAndContextMenu(tab);
+});
+
+</script>

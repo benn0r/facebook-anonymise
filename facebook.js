@@ -1,3 +1,7 @@
+for (var i = 0; i < document.getElementsByClassName("anon-div").length; i++) {
+	document.getElementsByClassName("anon-div")[i].style.display = 'none';
+}
+
 var a = document.getElementsByClassName("actorPhoto");
 var c = document.getElementsByClassName("actorPic");
 var b = document.getElementsByClassName("actorName"); // element a inside
@@ -80,7 +84,7 @@ for (var i = 0; i < a.length; i++) {
 	}
 	
 	a[i].style.position = 'relative'; 
-	a[i].innerHTML += '<div style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
+	a[i].innerHTML += '<div class="anon-div" style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
 	
 }
 
@@ -95,7 +99,7 @@ for (var i = 0; i < c.length; i++) {
 	}
 	
 	c[i].style.position = 'relative'; 
-	c[i].innerHTML += '<div style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
+	c[i].innerHTML += '<div class="anon-div" style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
 	
 }
 
@@ -116,5 +120,5 @@ for (var i = 0; i < b.length; i++) {
 	}
 	
 	d.style.position = 'relative';
-	d.innerHTML += '<div style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
+	d.innerHTML += '<div class="anon-div" style="background: '+color+'; position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"></div>';
 }

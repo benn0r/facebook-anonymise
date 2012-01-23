@@ -1,0 +1,16 @@
+{
+  "name": "Facebook Anonymise",
+  "version": "1.0",
+  "description": "Anonymise Facebook Names and Avatars for Screenshots.",
+  "icons": { "19": "icon.png" },
+  "background_page": "background.html",
+  "permissions": [
+    "tabs"
+  ],
+  "page_action": {
+      "default icon": "icon.png",
+      "default title": "Facebook Anonymise",
+      "popup": "popup.html"
+   },
+   "permissions": [ "tabs", "http://*/*", "https://*/*", "contextMenus", "webRequest", "webRequestBlocking", "unlimitedStorage" ]
+}
